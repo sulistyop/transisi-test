@@ -1,3 +1,42 @@
+# Laravel starter
+
+This is a blank [Laravel](https://laravel.com) project that will connect to any prismic.io repository. It uses the prismic.io PHP development kit, and provides a few helpers to integrate with a Laravel website.
+
+## Getting started
+
+### Launch the starter project
+
+*(Assuming you've [installed Laravel](https://laravel.com/docs/5.5/installation))*
+
+Fork this repository, then clone your fork, and run this in your newly created directory:
+
+``` bash
+composer install
+```
+
+Next you need to make a copy of the `.env.example` file and rename it to `.env` inside your project root.
+
+Run the following command to generate your app key:
+
+```
+php artisan key:generate
+```
+Publish Storage to show Image
+```
+php artisan storage:link
+```
+
+Then start your server:
+
+```
+php artisan serve
+```
+
+Your Laravel starter project is now up and running! 
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
