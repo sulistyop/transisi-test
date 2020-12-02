@@ -12,4 +12,8 @@ class Employee extends Model
     protected $fillable = [
         'name', 'company',
     ];
+    public function company(){
+        return $this->belongsTo(Company::class);
+        
+    }
 }

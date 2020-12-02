@@ -17,11 +17,8 @@
                 @csrf
                 @method('post')
                 <div class="form-group">
-                    <label for="nama">Nama</label>
+                    <label for="nama">Nama Perusahaan</label>
                     <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ old('nama') }}">
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
                     @error('nama')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -30,7 +27,7 @@
                 
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email Perusahaan</label>
                     <input id="email" type="email" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" >
                     @error('email')
                     <div class="invalid-feedback">
@@ -39,7 +36,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="website">Website</label>
+                    <label for="website">Website Perusahaan</label>
                     <input type="text" name="website" class="form-control @error('email') is-invalid @enderror" id="website" value="{{ old('website') }}">
                     @error('website')
                     <div class="invalid-feedback">

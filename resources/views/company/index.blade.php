@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -32,7 +33,7 @@
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Product</th>
+                <th scope="col">Nama</th>
                 <th scope="col">email</th>
                 <th scope="col">logo</th>
                 <th scope="col">website</th>
@@ -48,7 +49,7 @@
                 <th scope="row">{{ $key + $company->firstItem()}}</th>
                     <td>{{$item->nama}}</td>
                     <td>{{$item->email}}</td>
-                    <td>{{$item->logo}}</td>
+                    <td><img src="{{$item->logo}}" class="img-fluid" style="width: 50px; height: 50px;" alt="" srcset=""></td>
                     <td><a href="https://{{$item->website}}" class="text-reset">{{$item->website}}</a></td>
                     <td>
                         

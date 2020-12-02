@@ -111,8 +111,8 @@ class CompanyController extends Controller
             ]);
             $extension = $request->logo->extension();
             $date = Carbon::now();
-            $request->logo->storeAs('/company/', $validated['nama'].".".$extension);
-            $url = Storage::url("company/".$validated['nama'].".".$extension);
+            $request->logo->storeAs('/public/company/', $validated['nama'].".".$extension);
+            $url = Storage::url("public/company/".$validated['nama'].".".$extension);
             Company::where('id',$company->id)->update([
                 'nama' => $request->nama,
                 'email' => $request->email,                   

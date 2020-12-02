@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employee = Employee::paginate(5);
+        $employee = Employee::with('company')->paginate(5);
         return view('employee.index',compact('employee'));
     }
 
@@ -28,8 +29,9 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('employee.create');
+    {   
+        $company  = Company::all();
+        return view('employee.create',compact('company'));
     }
 
     /**
@@ -40,7 +42,9 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Employee::create($request->all());
+        return redirect('/employee')->with('status','Data Karyawan Berhasil Ditambahkan');
+     
     }
 
     /**
@@ -60,9 +64,10 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Employee $employee)
     {
-        //
+        $company = Company::all();
+        return view('employee.update' ,compact('employee','company'));
     }
 
     /**
@@ -74,7 +79,7 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $request;
     }
 
     /**
