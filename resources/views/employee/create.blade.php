@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     {{-- <label for="inlineFormCustomSelect">Select Category</label> --}}
-                    <select name="company" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <select name="company_id" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                         <option selected>Company...</option>
                         @foreach ($company as $option)
                             <option value="{{$option->id}}">{{$option->nama}}</option>
